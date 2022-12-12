@@ -89,17 +89,18 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">380,119.5</av:Point>
-          <av:Size x:Key="ShapeSize">200,61</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">480,180.5 480,209.5</av:PointCollection>
+          <av:Size x:Key="ShapeSize">200,133</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">480,252.5 480,309.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Credenciales.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,61" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Credenciales.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Actividad para tomar las credenciales y guardarlas en una variable para usar después" DisplayName="Credenciales.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,133" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Credenciales.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <OutArgument x:TypeArguments="ui:PasswordCredentials" x:Key="out_JiraLogin">[JiraLogin]</OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:InvokeWorkflowFile>
@@ -107,18 +108,19 @@
         <FlowStep x:Name="__ReferenceID2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">380,209.5</av:Point>
-              <av:Size x:Key="ShapeSize">200,61</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">480,270.5 480,299.5</av:PointCollection>
+              <av:Point x:Key="ShapeLocation">380,309.5</av:Point>
+              <av:Size x:Key="ShapeSize">200,103</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">480,412.5 480,439.5</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LeerCorreo.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,61" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="LeerCorreo.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Revisión de correos nuevos&#xD;&#xA;" DisplayName="LeerCorreo.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,103" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="LeerCorreo.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <OutArgument x:TypeArguments="scg:List(snm:MailMessage)" x:Key="out_CorreosRecibidos">[CorreosRecibidos]</OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:InvokeWorkflowFile>
@@ -126,12 +128,12 @@
             <FlowStep x:Name="__ReferenceID0">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">380,299.5</av:Point>
-                  <av:Size x:Key="ShapeSize">200,61</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">480,360.5 480,406.5</av:PointCollection>
+                  <av:Point x:Key="ShapeLocation">380,439.5</av:Point>
+                  <av:Size x:Key="ShapeSize">200,103</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">480,542.5 480,626.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="[ConteoCorreosAlFinal]" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="200,61" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[CorreosRecibidos]">
+              <ui:ForEach x:TypeArguments="snm:MailMessage" sap2010:Annotation.AnnotationText="Asignación de variables para cada elemento de los correos" CurrentIndex="[ConteoCorreosAlFinal]" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="200,103" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[CorreosRecibidos]">
                 <ui:ForEach.Body>
                   <ActivityAction x:TypeArguments="snm:MailMessage">
                     <ActivityAction.Argument>
@@ -157,28 +159,34 @@
                     </Sequence>
                   </ActivityAction>
                 </ui:ForEach.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
               </ui:ForEach>
               <FlowStep.Next>
-                <FlowDecision x:Name="__ReferenceID5" Condition="[EmailSubject.Contains(&quot;GSTI&quot;)]" DisplayName="Decisión de flujo" sap:VirtualizedContainerService.HintSize="94,87" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
+                <FlowDecision x:Name="__ReferenceID5" sap2010:Annotation.AnnotationText="Revisión si el correo contiene un ticket o es un caso nuevo" Condition="[EmailSubject.Contains(&quot;GSTI&quot;)]" DisplayName="Decisión de flujo" sap:VirtualizedContainerService.HintSize="94,87" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <av:Point x:Key="ShapeLocation">433,406.5</av:Point>
+                      <av:Point x:Key="ShapeLocation">433,626.5</av:Point>
                       <av:Size x:Key="ShapeSize">94,87</av:Size>
-                      <av:PointCollection x:Key="TrueConnector">433,450 330,450</av:PointCollection>
-                      <av:PointCollection x:Key="FalseConnector">527,450 760,450</av:PointCollection>
+                      <av:PointCollection x:Key="TrueConnector">433,670 403,670 403,668.5 290,668.5</av:PointCollection>
+                      <av:PointCollection x:Key="FalseConnector">527,670 780,670</av:PointCollection>
+                      <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <FlowDecision.True>
                     <FlowStep x:Name="__ReferenceID4">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:Point x:Key="ShapeLocation">130,419.5</av:Point>
-                          <av:Size x:Key="ShapeSize">200,61</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">230,480.5 230,499.5</av:PointCollection>
+                          <av:Point x:Key="ShapeLocation">90,609.5</av:Point>
+                          <av:Size x:Key="ShapeSize">200,118</av:Size>
+                          <av:PointCollection x:Key="ConnectorLocation">190,727.5 190,748.5</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="NuevoComentario.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,61" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="NuevoComentario.xaml">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Actividad para crear un comentario en ticket existente" DisplayName="NuevoComentario.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="NuevoComentario.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="scg:List(snm:MailMessage)" x:Key="in_mail">[CorreosRecibidos]</InArgument>
                           <InArgument x:TypeArguments="ui:PasswordCredentials" x:Key="in_Credentials">[JiraLogin]</InArgument>
@@ -186,6 +194,7 @@
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:InvokeWorkflowFile>
@@ -193,12 +202,12 @@
                         <FlowStep x:Name="__ReferenceID6">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:Point x:Key="ShapeLocation">130,499.5</av:Point>
-                              <av:Size x:Key="ShapeSize">200,61</av:Size>
-                              <av:PointCollection x:Key="ConnectorLocation">230,560.5 230,580 450,580</av:PointCollection>
+                              <av:Point x:Key="ShapeLocation">90,748.5</av:Point>
+                              <av:Size x:Key="ShapeSize">200,103</av:Size>
+                              <av:PointCollection x:Key="ConnectorLocation">190,851.5 190,891 400,891</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="NuevoUpdate.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,61" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="NuevoUpdate.xaml">
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Actualización de adjuntos en ticket existente" DisplayName="NuevoUpdate.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,103" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="NuevoUpdate.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
                               <InArgument x:TypeArguments="scg:List(snm:MailMessage)" x:Key="in_mail">[CorreosRecibidos]</InArgument>
                               <InArgument x:TypeArguments="ui:PasswordCredentials" x:Key="in_credentials">[JiraLogin]</InArgument>
@@ -206,6 +215,7 @@
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:InvokeWorkflowFile>
@@ -213,43 +223,38 @@
                             <FlowStep x:Name="__ReferenceID1">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <av:Point x:Key="ShapeLocation">450,549.5</av:Point>
-                                  <av:Size x:Key="ShapeSize">200,61</av:Size>
-                                  <av:PointCollection x:Key="ConnectorLocation">550,610.5 550,676.5</av:PointCollection>
+                                  <av:Point x:Key="ShapeLocation">400,839.5</av:Point>
+                                  <av:Size x:Key="ShapeSize">200,103</av:Size>
+                                  <av:PointCollection x:Key="ConnectorLocation">500,942.5 500,976.5</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LeerCorreoAlFinal.xaml - Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="200,61" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="LeerCorreoAlFinal.xaml">
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Verifica si quedan correos por procesar" DisplayName="LeerCorreoAlFinal.xaml - Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="200,103" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="LeerCorreoAlFinal.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
                                   <scg:Dictionary x:TypeArguments="x:String, Argument" />
                                 </ui:InvokeWorkflowFile.Arguments>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:InvokeWorkflowFile>
                               <FlowStep.Next>
-                                <FlowDecision x:Name="__ReferenceID7" DisplayName="Decisión de flujo" sap:VirtualizedContainerService.HintSize="94,87" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
-                                  <FlowDecision.Condition>
-                                    <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="ConteoCorreosAlFinal &gt; 0" />
-                                  </FlowDecision.Condition>
+                                <FlowDecision x:Name="__ReferenceID7" Condition="[ConteoCorreosAlFinal &gt; 0]" DisplayName="Decisión de flujo" sap:VirtualizedContainerService.HintSize="94,87" sap2010:WorkflowViewState.IdRef="FlowDecision_5" True="{x:Reference __ReferenceID0}">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      <av:Point x:Key="ShapeLocation">503,676.5</av:Point>
+                                      <av:Point x:Key="ShapeLocation">453,976.5</av:Point>
                                       <av:Size x:Key="ShapeSize">94,87</av:Size>
-                                      <av:PointCollection x:Key="TrueConnector">503,720 113,720 113,330 380,330</av:PointCollection>
-                                      <av:PointCollection x:Key="FalseConnector">597,720 740,720</av:PointCollection>
+                                      <av:PointCollection x:Key="TrueConnector">453,1020 25.5,1020 25.5,491 380,491</av:PointCollection>
+                                      <av:PointCollection x:Key="FalseConnector">547,1020 750,1020</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <FlowDecision.True>
-                                    <x:Reference>__ReferenceID0</x:Reference>
-                                  </FlowDecision.True>
                                   <FlowDecision.False>
                                     <FlowStep x:Name="__ReferenceID8">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <av:Point x:Key="ShapeLocation">740,689.5</av:Point>
+                                          <av:Point x:Key="ShapeLocation">750,989.5</av:Point>
                                           <av:Size x:Key="ShapeSize">200,61</av:Size>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
@@ -274,12 +279,12 @@
                     <FlowStep x:Name="__ReferenceID3">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:Point x:Key="ShapeLocation">760,419.5</av:Point>
-                          <av:Size x:Key="ShapeSize">200,61</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">860,480.5 860,580 650,580</av:PointCollection>
+                          <av:Point x:Key="ShapeLocation">780,603.5</av:Point>
+                          <av:Size x:Key="ShapeSize">200,133</av:Size>
+                          <av:PointCollection x:Key="ConnectorLocation">880,736.5 880,891 600,891</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="NuevoTiket.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,61" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="NuevoTiket.xaml">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Crea un ticket nuevo, agrega adjuntos y regresa un correo al remitente con el número de ticket creado" DisplayName="NuevoTiket.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,133" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="NuevoTiket.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="scg:List(snm:MailMessage)" x:Key="In_Mail">[CorreosRecibidos]</InArgument>
                           <InArgument x:TypeArguments="ui:PasswordCredentials" x:Key="In_Credentials">[JiraLogin]</InArgument>
@@ -287,6 +292,7 @@
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:InvokeWorkflowFile>
