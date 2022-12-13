@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="NuevoUpdate" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="NuevoUpdate" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_mail" Type="InArgument(scg:List(snm:MailMessage))" />
     <x:Property Name="in_credentials" Type="InArgument(ui:PasswordCredentials)" />
@@ -6,10 +6,10 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1861,1238</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1861,1962</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>NuevoUpdate_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="74">
+    <scg:List x:TypeArguments="x:String" Capacity="39">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -52,7 +52,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="114">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="58">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
@@ -112,7 +112,7 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="NuevoUpdate" sap:VirtualizedContainerService.HintSize="591,1173" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="NuevoUpdate" sap:VirtualizedContainerService.HintSize="596,1897" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="MailMessage" />
       <Variable x:TypeArguments="ui:PasswordCredentials" Name="Credentials" />
@@ -123,7 +123,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="529,70" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="534,70" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:List(snm:MailMessage)">[MailMessage]</OutArgument>
       </Assign.To>
@@ -131,7 +131,7 @@
         <InArgument x:TypeArguments="scg:List(snm:MailMessage)">[In_Mail]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="529,70" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign sap:VirtualizedContainerService.HintSize="534,70" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="ui:PasswordCredentials">[Credentials]</OutArgument>
       </Assign.To>
@@ -139,26 +139,28 @@
         <InArgument x:TypeArguments="ui:PasswordCredentials">[In_Credentials]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="529,831" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[MailMessage]">
+    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="534,1555" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[MailMessage]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="snm:MailMessage">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="mail" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="493,697" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="498,1421" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="EmailFrom" />
               <Variable x:TypeArguments="x:String" Name="EmailSubject" />
               <Variable x:TypeArguments="x:String" Name="EmailMessage" />
               <Variable x:TypeArguments="njl:JObject" Name="jsObj" />
               <Variable x:TypeArguments="x:String" Name="UpdateResponse" />
+              <Variable x:TypeArguments="x:String" Name="RequestURL" />
+              <Variable x:TypeArguments="s:String[]" Name="AttachmentsList" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="431,203" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="436,203" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
               <ui:MultipleAssign.AssignOperations>
                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -196,8 +198,8 @@
                 </scg:List>
               </ui:MultipleAssign.AssignOperations>
             </ui:MultipleAssign>
-            <ui:SaveMailAttachments Attachments="{x:Null}" DisplayName="Save email attachments in new folder" ExcludeInlineAttachments="False" FolderPath="MailAttachments/" sap:VirtualizedContainerService.HintSize="431,99" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[Mail]" OverwriteExisting="False" />
-            <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="431,74" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <ui:SaveMailAttachments Attachments="{x:Null}" DisplayName="Save email attachments in new folder" ExcludeInlineAttachments="False" FolderPath="MailAttachments/" sap:VirtualizedContainerService.HintSize="436,99" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[Mail]" OverwriteExisting="False" />
+            <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="436,74" sap2010:WorkflowViewState.IdRef="Assign_3">
               <Assign.To>
                 <OutArgument x:TypeArguments="njl:JObject">[jsObj]</OutArgument>
               </Assign.To>
@@ -212,7 +214,23 @@
 )]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" StatusCode="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" Body="[jsObj.ToString]" BodyFormat="application/json" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="https://jiraco.softtek.cloud/rest/api/2/issue/" sap:VirtualizedContainerService.HintSize="431,79" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="POST" Result="[UpdateResponse]" SecurePassword="[Credentials.SecurePassword]" TimeoutMS="6000" Username="[Credentials.Username]">
+            <Assign DisplayName="New attachment list" sap:VirtualizedContainerService.HintSize="436,70" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:String[]">[AttachmentsList]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles("MailAttachments/")]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="436,70" sap2010:WorkflowViewState.IdRef="Assign_5">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[RequestURL]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">["https://jiraco.softtek.cloud/rest/api/latest/issue/"+IssueKey +"/attachments"]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" StatusCode="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" Body="[jsObj.ToString]" BodyFormat="application/json" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="https://jiraco.softtek.cloud/rest/api/2/issue/" sap:VirtualizedContainerService.HintSize="436,79" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="POST" Result="[UpdateResponse]" SecurePassword="[Credentials.SecurePassword]" TimeoutMS="6000" Username="[Credentials.Username]">
               <ui:HttpClient.Attachments>
                 <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
               </ui:HttpClient.Attachments>
@@ -229,6 +247,40 @@
                 <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
               </ui:HttpClient.UrlSegments>
             </ui:HttpClient>
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Para cada" sap:VirtualizedContainerService.HintSize="436,464" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[AttachmentsList]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="x:String">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:String" Name="Attachment" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,330" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" Result="{x:Null}" SecureClientCertificatePassword="{x:Null}" StatusCode="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" BodyFormat="application/json" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="[RequestURL]" sap:VirtualizedContainerService.HintSize="338,79" sap2010:WorkflowViewState.IdRef="HttpClient_2" Method="POST" Password="[Credentials.Password]" SecurePassword="[Credentials.SecurePassword]" TimeoutMS="6000" Username="[Credentials.Username]">
+                      <ui:HttpClient.Attachments>
+                        <InArgument x:TypeArguments="x:String" x:Key="file">[Attachment.ToString]</InArgument>
+                      </ui:HttpClient.Attachments>
+                      <ui:HttpClient.Cookies>
+                        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                      </ui:HttpClient.Cookies>
+                      <ui:HttpClient.Headers>
+                        <InArgument x:TypeArguments="x:String" x:Key="X-Atlassian-Token">no-check</InArgument>
+                      </ui:HttpClient.Headers>
+                      <ui:HttpClient.Parameters>
+                        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                      </ui:HttpClient.Parameters>
+                      <ui:HttpClient.UrlSegments>
+                        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                      </ui:HttpClient.UrlSegments>
+                    </ui:HttpClient>
+                    <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="338,89" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[Attachment.ToString]" />
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+            </ui:ForEach>
           </Sequence>
         </ActivityAction>
       </ui:ForEach.Body>
