@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1861,2426</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>767,2884</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>NuevoTiket_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="74">
@@ -116,7 +116,7 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="NuevoTiket" sap:VirtualizedContainerService.HintSize="596,2361" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="NuevoTiket" sap:VirtualizedContainerService.HintSize="596,2819" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="MailMessage" />
       <Variable x:TypeArguments="ui:PasswordCredentials" Name="Credentials" />
@@ -129,29 +129,39 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="534,70" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap2010:Annotation.AnnotationText="Asignación de argumento de entrada a variable&#xD;&#xA;" sap:VirtualizedContainerService.HintSize="534,127" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:List(snm:MailMessage)">[MailMessage]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="scg:List(snm:MailMessage)">[In_Mail]</InArgument>
       </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="534,70" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign sap2010:Annotation.AnnotationText="Asignación de argumento de entrada a variable&#xD;&#xA;" sap:VirtualizedContainerService.HintSize="534,127" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="ui:PasswordCredentials">[Credentials]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="ui:PasswordCredentials">[In_Credentials]</InArgument>
       </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="534,1821" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[MailMessage]">
+    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="534,2123" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[MailMessage]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="snm:MailMessage">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="Mail" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="498,1687" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="498,1989" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="EmailFrom" />
               <Variable x:TypeArguments="x:String" Name="EmailSubject" />
@@ -167,7 +177,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="436,203" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+            <ui:MultipleAssign sap2010:Annotation.AnnotationText="Asignación de cada elemeto del correo a variables" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="436,234" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
               <ui:MultipleAssign.AssignOperations>
                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -204,9 +214,14 @@
                   </ui:AssignOperation>
                 </scg:List>
               </ui:MultipleAssign.AssignOperations>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </ui:MultipleAssign>
             <ui:SaveMailAttachments Attachments="{x:Null}" DisplayName="Save email attachments in new folder" ExcludeInlineAttachments="False" FolderPath="MailAttachments/" sap:VirtualizedContainerService.HintSize="436,99" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[Mail]" OverwriteExisting="False" />
-            <Assign sap:VirtualizedContainerService.HintSize="436,74" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign sap2010:Annotation.AnnotationText="Asignación de la configuración de archivo Json a variable" sap:VirtualizedContainerService.HintSize="436,116" sap2010:WorkflowViewState.IdRef="Assign_2">
               <Assign.To>
                 <OutArgument x:TypeArguments="njl:JObject">[jsObj]</OutArgument>
               </Assign.To>
@@ -226,8 +241,13 @@
 	}
 )]</InArgument>
               </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </Assign>
-            <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" Body="[jsObj.ToString]" BodyFormat="application/json" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="https://jiraco.softtek.cloud/rest/api/2/issue/" sap:VirtualizedContainerService.HintSize="436,79" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="POST" Result="[Encabezado]" SecurePassword="[Credentials.SecurePassword]" StatusCode="[Estado]" TimeoutMS="6000" Username="[Credentials.Username]">
+            <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" AcceptFormat="JSON" sap2010:Annotation.AnnotationText="Requerimiento para subir el archivo Json y su configuración" AuthenticationType="None" Body="[jsObj.ToString]" BodyFormat="application/json" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="https://jiraco.softtek.cloud/rest/api/2/issue/" sap:VirtualizedContainerService.HintSize="436,136" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="POST" Result="[Encabezado]" SecurePassword="[Credentials.SecurePassword]" StatusCode="[Estado]" TimeoutMS="6000" Username="[Credentials.Username]">
               <ui:HttpClient.Attachments>
                 <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
               </ui:HttpClient.Attachments>
@@ -243,23 +263,44 @@
               <ui:HttpClient.UrlSegments>
                 <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
               </ui:HttpClient.UrlSegments>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </ui:HttpClient>
-            <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="436,116" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[String.Format(&quot;Response: {0} Status: {1}&quot;,Encabezado,Estado)]" />
-            <Assign sap:VirtualizedContainerService.HintSize="436,70" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <ui:LogMessage sap2010:Annotation.AnnotationText="Revisión del estado del requerimiento" DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="436,147" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[String.Format(&quot;Response: {0} Status: {1}&quot;,Encabezado,Estado)]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+            <Assign sap2010:Annotation.AnnotationText="Asignación del número de ticket generado a variable" sap:VirtualizedContainerService.HintSize="436,112" sap2010:WorkflowViewState.IdRef="Assign_4">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[IssueKey]</OutArgument>
               </Assign.To>
               <Assign.Value>
                 <InArgument x:TypeArguments="x:String">[Encabezado.Split(":"c)(2).Substring(1,9)]</InArgument>
               </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </Assign>
-            <Assign sap:VirtualizedContainerService.HintSize="436,70" sap2010:WorkflowViewState.IdRef="Assign_5">
+            <Assign sap2010:Annotation.AnnotationText="Asignación de la ruta a utiliar en requerimientos&#xD;&#xA;" sap:VirtualizedContainerService.HintSize="436,127" sap2010:WorkflowViewState.IdRef="Assign_5">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[RequestURL]</OutArgument>
               </Assign.To>
               <Assign.Value>
                 <InArgument x:TypeArguments="x:String">["https://jiraco.softtek.cloud/rest/api/latest/issue/"+IssueKey +"/attachments"]</InArgument>
               </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </Assign>
             <Assign DisplayName="New attachment list" sap:VirtualizedContainerService.HintSize="436,70" sap2010:WorkflowViewState.IdRef="Assign_6">
               <Assign.To>
@@ -269,7 +310,7 @@
                 <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles("MailAttachments/")]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="436,464" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[AttachmentsList]">
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Actividad para subir cada adjunto por medio del requerimiento y borrarlo luego de usarlo" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="436,506" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[AttachmentsList]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:String">
                   <ActivityAction.Argument>
@@ -302,15 +343,25 @@
                   </Sequence>
                 </ActivityAction>
               </ui:ForEach.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </ui:ForEach>
           </Sequence>
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Saludos, su ticket fue generado con exito el dia&quot; + Date.Now.ToString + &quot;; puede hacerle seguimiento y actualizaciones con el código [&quot; + IssueKey + &quot;]&quot;]" DisplayName="Enviar mensaje de correo de Outlook" sap:VirtualizedContainerService.HintSize="534,158" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[&quot;TIcket [&quot; + IssueKey + &quot;]&quot;]" To="ivan.ocampo@softtek.com">
+    <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Respuesta por correo con número de caso para modificaciones y seguimiento" Body="[&quot;Saludos, su ticket fue generado con exito el dia&quot; + Date.Now.ToString + &quot;; puede hacerle seguimiento y actualizaciones con el código [&quot; + IssueKey + &quot;]&quot;]" DisplayName="Enviar mensaje de correo de Outlook" sap:VirtualizedContainerService.HintSize="534,200" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[&quot;TIcket [&quot; + IssueKey + &quot;]&quot;]" To="ivan.ocampo@softtek.com">
       <ui:SendOutlookMail.Files>
         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
       </ui:SendOutlookMail.Files>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:SendOutlookMail>
   </Sequence>
 </Activity>

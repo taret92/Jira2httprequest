@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1861,1444" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1460,1443.9999999999998" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -30,7 +30,7 @@
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="27">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="54">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -57,6 +57,7 @@
       <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
       <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="FlowchartMain" sap:VirtualizedContainerService.HintSize="1470,1379" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -83,11 +84,11 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">580,133.5</av:Point>
-          <av:Size x:Key="ShapeSize">200,133</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">680,266.5 680,328.5</av:PointCollection>
+          <av:Size x:Key="ShapeSize">200,138</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">680,271.5 680,328.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Actividad para tomar las credenciales y guardarlas en una variable para usar después" DisplayName="Credenciales.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,133" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Credenciales.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Actividad para tomar las credenciales y guardarlas en una variable para usar después" DisplayName="Credenciales.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,138" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Credenciales.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <OutArgument x:TypeArguments="ui:PasswordCredentials" x:Key="out_JiraLogin">[JiraLogin]</OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
@@ -103,11 +104,11 @@
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">580,328.5</av:Point>
-              <av:Size x:Key="ShapeSize">200,103</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">680,431.5 680,458.5</av:PointCollection>
+              <av:Size x:Key="ShapeSize">200,106</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">680,434.5 680,458.5</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Revisión de correos nuevos&#xA;" DisplayName="LeerCorreo.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,103" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="LeerCorreo.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Revisión de correos nuevos&#xA;" DisplayName="LeerCorreo.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,106" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="LeerCorreo.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <OutArgument x:TypeArguments="scg:List(snm:MailMessage)" x:Key="out_CorreosRecibidos">[CorreosRecibidos]</OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
@@ -123,11 +124,11 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">580,458.5</av:Point>
-                  <av:Size x:Key="ShapeSize">200,103</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">680,561.5 680,636.5</av:PointCollection>
+                  <av:Size x:Key="ShapeSize">200,106</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">680,564.5 680,636.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ForEach x:TypeArguments="snm:MailMessage" sap2010:Annotation.AnnotationText="Asignación de variables para cada elemento de los correos" CurrentIndex="[ConteoCorreosAlFinal]" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="200,103" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[CorreosRecibidos]">
+              <ui:ForEach x:TypeArguments="snm:MailMessage" sap2010:Annotation.AnnotationText="Asignación de variables para cada elemento de los correos" CurrentIndex="[ConteoCorreosAlFinal]" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="200,106" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[CorreosRecibidos]">
                 <ui:ForEach.Body>
                   <ActivityAction x:TypeArguments="snm:MailMessage">
                     <ActivityAction.Argument>
@@ -166,8 +167,8 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <av:Point x:Key="ShapeLocation">633,636.5</av:Point>
                       <av:Size x:Key="ShapeSize">94,87</av:Size>
-                      <av:PointCollection x:Key="TrueConnector">633,680 490,680</av:PointCollection>
-                      <av:PointCollection x:Key="FalseConnector">727,680 757,680 757,690 980,690</av:PointCollection>
+                      <av:PointCollection x:Key="TrueConnector">633,680 603,680 603,682 490,682</av:PointCollection>
+                      <av:PointCollection x:Key="FalseConnector">727,680 757.0000000000001,680 757.0000000000001,692.5 980,692.5</av:PointCollection>
                       <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -176,11 +177,11 @@
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:Point x:Key="ShapeLocation">290,621</av:Point>
-                          <av:Size x:Key="ShapeSize">200,118</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">390,739 390,758.5</av:PointCollection>
+                          <av:Size x:Key="ShapeSize">200,122</av:Size>
+                          <av:PointCollection x:Key="ConnectorLocation">390,743 390,758.5</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Actividad para crear un comentario en ticket existente" DisplayName="NuevoComentario.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="NuevoComentario.xaml">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Actividad para crear un comentario en ticket existente" DisplayName="NuevoComentario.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="NuevoComentario.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="scg:List(snm:MailMessage)" x:Key="in_mail">[CorreosRecibidos]</InArgument>
                           <InArgument x:TypeArguments="ui:PasswordCredentials" x:Key="in_Credentials">[JiraLogin]</InArgument>
@@ -197,11 +198,11 @@
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:Point x:Key="ShapeLocation">290,758.5</av:Point>
-                              <av:Size x:Key="ShapeSize">200,103</av:Size>
-                              <av:PointCollection x:Key="ConnectorLocation">390,861.5 390,910 600,910</av:PointCollection>
+                              <av:Size x:Key="ShapeSize">200,106</av:Size>
+                              <av:PointCollection x:Key="ConnectorLocation">390,864.5 390,911.5 600,911.5</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Actualización de adjuntos en ticket existente" DisplayName="NuevoUpdate.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,103" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="NuevoUpdate.xaml">
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Actualización de adjuntos en ticket existente" DisplayName="NuevoUpdate.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,106" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="NuevoUpdate.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
                               <InArgument x:TypeArguments="scg:List(snm:MailMessage)" x:Key="in_mail">[CorreosRecibidos]</InArgument>
                               <InArgument x:TypeArguments="ui:PasswordCredentials" x:Key="in_credentials">[JiraLogin]</InArgument>
@@ -218,11 +219,11 @@
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <av:Point x:Key="ShapeLocation">600,858.5</av:Point>
-                                  <av:Size x:Key="ShapeSize">200,103</av:Size>
-                                  <av:PointCollection x:Key="ConnectorLocation">700,961.5 700,986.4999999999999</av:PointCollection>
+                                  <av:Size x:Key="ShapeSize">200,106</av:Size>
+                                  <av:PointCollection x:Key="ConnectorLocation">700,964.5 700,986.4999999999999</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Verifica si quedan correos por procesar" DisplayName="LeerCorreoAlFinal.xaml - Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="200,103" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="LeerCorreoAlFinal.xaml">
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Verifica si quedan correos por procesar" DisplayName="LeerCorreoAlFinal.xaml - Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="200,106" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="LeerCorreoAlFinal.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
                                   <scg:Dictionary x:TypeArguments="x:String, Argument" />
                                 </ui:InvokeWorkflowFile.Arguments>
@@ -240,8 +241,8 @@
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       <av:Point x:Key="ShapeLocation">653,986.4999999999999</av:Point>
                                       <av:Size x:Key="ShapeSize">94,87</av:Size>
-                                      <av:PointCollection x:Key="TrueConnector">653,1030 229.5,1030 229.5,510 580,510</av:PointCollection>
-                                      <av:PointCollection x:Key="FalseConnector">747,1030 777,1030 777,1040 950,1040</av:PointCollection>
+                                      <av:PointCollection x:Key="TrueConnector">653,1030 189.8127597946606,1030 189.8127597946606,511.5 580,511.5</av:PointCollection>
+                                      <av:PointCollection x:Key="FalseConnector">747,1030 777,1030 777,1062.5 950,1062.5</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <FlowDecision.False>
@@ -249,13 +250,14 @@
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <av:Point x:Key="ShapeLocation">950,1009.4999999999999</av:Point>
-                                          <av:Size x:Key="ShapeSize">200,61</av:Size>
+                                          <av:Size x:Key="ShapeSize">200,106</av:Size>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="200,61" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;No se encontraron nuevos mensajes, tarea terminada&quot;]">
+                                      <ui:LogMessage sap2010:Annotation.AnnotationText="Mensaje de finalización del proceso" DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="200,106" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;No se encontraron nuevos mensajes, tarea terminada&quot;]">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                       </ui:LogMessage>
@@ -274,11 +276,11 @@
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:Point x:Key="ShapeLocation">980,623.5</av:Point>
-                          <av:Size x:Key="ShapeSize">200,133</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">1080,756.5 1080,910 800,910</av:PointCollection>
+                          <av:Size x:Key="ShapeSize">200,138</av:Size>
+                          <av:PointCollection x:Key="ConnectorLocation">1080,761.5 1080,911.5 800,911.5</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Crea un ticket nuevo, agrega adjuntos y regresa un correo al remitente con el número de ticket creado" DisplayName="NuevoTiket.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,133" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="NuevoTiket.xaml">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Crea un ticket nuevo, agrega adjuntos y regresa un correo al remitente con el número de ticket creado" DisplayName="NuevoTiket.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,138" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="NuevoTiket.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="scg:List(snm:MailMessage)" x:Key="In_Mail">[CorreosRecibidos]</InArgument>
                           <InArgument x:TypeArguments="ui:PasswordCredentials" x:Key="In_Credentials">[JiraLogin]</InArgument>
